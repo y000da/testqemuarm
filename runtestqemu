@@ -1,0 +1,13 @@
+# Запуск тестовой виртуальной ARM-машины с помощью qemu-aystem-arm 
+
+# Использование: 
+# Запуск: ./runtestqemu
+# Остановка: Ctrl+A X
+
+qemu-system-arm \
+	-M versatilepb \
+	-kernel zImage \
+	-initrd initramfs.cpio.gz \
+	-append "console=ttyAMA0 root=/dev/ram rdinit=/bin/sh" \
+	-nographic \
+	-dtb versatile-pb.dtb
